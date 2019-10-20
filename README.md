@@ -8,3 +8,36 @@ Provide Graphql Endpoint for Marvel API
 - `docker-compose up -d`
 
 ## schema available [here](http://127.0.0.1:4000)
+
+## Request sample
+```graphql
+{
+  character(id:"1009149") {
+    name
+    description
+  }
+  characters(limit: 1, offset: 7) {
+    meta {
+      offset
+      limit
+      total
+      count
+    }
+    data {
+      id
+      name
+      comics {
+        items {
+          name
+        }
+      }
+      description
+      resourceURI
+      thumbnail {
+        path
+        extension
+      }
+    }
+  }
+}
+```
