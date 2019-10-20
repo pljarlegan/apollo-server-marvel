@@ -7,6 +7,9 @@ Provide Graphql Endpoint for Marvel API
 - edit .env file > set all needed keys
 - `docker-compose up -d`
 
+## build prod image
+- `yarn build`
+
 ## schema available [here](http://127.0.0.1:4000)
 
 ## Request sample
