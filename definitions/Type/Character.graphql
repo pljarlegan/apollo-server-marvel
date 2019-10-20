@@ -1,0 +1,24 @@
+type Character {
+  id: ID!
+  name: String!
+  description: String
+  thumbnail: Thumbnail
+  resourceURI: String
+  comics: CharacterComic
+}
+
+type PaginatedCharacters {
+  data: [Character]
+  meta: Pagination
+}
+
+type CharacterComic {
+  available: Int!
+  extension: String!
+  items: [CharacterComicItem]
+}
+
+type CharacterComicItem {
+  name: String!
+  resourceURI: String!
+}
