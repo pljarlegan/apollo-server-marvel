@@ -7,7 +7,7 @@ class ComicRESTDataSource extends RESTDataSource {
     return this.context.marvel.comics
       .findAll(limit, offset)
       .then((res) => {
-        console.log(JSON.stringify(res, null, 2));
+        // console.log(JSON.stringify(res, null, 2));
         return res;
       });
   }
