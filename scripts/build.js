@@ -5,7 +5,7 @@ const util = require("util"),
 
 async function build() { // eslint-disable-line func-style
   "use strict";
-  const { stdout, stderr } = await exec(`docker build -f node/Dockerfile -t ${packageConfig.docker.owner}/${packageConfig.name}:${packageConfig.version} --no-cache .`);
+  const { stdout, stderr } = await exec(`docker build -f node/Dockerfile --build-arg UID=1000 --build-arg GID=1000 -t ${packageConfig.docker.owner}/${packageConfig.name}:${packageConfig.version} --no-cache .`);
   if (stderr) {
     console.log(stderr);
     return;

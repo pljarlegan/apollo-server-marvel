@@ -3,7 +3,7 @@ version: '3'
 services:
   server:
     container_name: node
-    image: pljarlegan/apollo-server-marvel:1.0.0
+    image: pljarlegan/apollo-server-marvel:1.0.2
     restart: always
     ports:
       - 4000:4000
