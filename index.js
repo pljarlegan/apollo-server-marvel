@@ -9,14 +9,14 @@ const server = new ApolloServer({
   resolvers: GraphQLHelper.resolvers,
   dataSources: () => GraphQLHelper.dataSources,
   context: () => {
-    let { NODE_ENV, PRIVATE_KEY, PUBLIC_KEY } = process.env;
+    let { PRIVATE_KEY, PUBLIC_KEY } = process.env;
 
-    if (NODE_ENV === "production" && !PRIVATE_KEY) {
+    if (!PRIVATE_KEY) {
       throw new ApolloError(
         "You have not set the `PRIVATE_KEY` environment variable !"
       );
     }
-    if (NODE_ENV === "production" && !PUBLIC_KEY) {
+    if (!PUBLIC_KEY) {
       throw new ApolloError(
         "You have not set the `PUBLIC_KEY` environment variable !"
       );
@@ -26,12 +26,17 @@ const server = new ApolloServer({
       publicKey: PUBLIC_KEY,
       privateKey: PRIVATE_KEY,
     });
+
     return {
       marvel,
     };
   }
 });
+let { PRIVATE_KEY, PUBLIC_KEY } = process.env;
 
+if (!(PRIVATE_KEY && PUBLIC_KEY)) {
+  return console.log("Unable to start server : config is missing".bold.red);
+}
 server.listen().then(({ url }) => {
   console.log("🚀".red + " Server ready at ".bold.red + url);
 });
