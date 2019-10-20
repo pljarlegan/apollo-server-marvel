@@ -6,5 +6,5 @@ yarn.lock
 env.*
 !env.dist
 now.json
-
+schema.graphql
 src/schema.graphql
