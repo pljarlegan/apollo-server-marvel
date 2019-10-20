@@ -41,3 +41,23 @@ Provide Graphql Endpoint for Marvel API
   }
 }
 ```
+```graphql
+{
+  comic(id: 1158) {
+    title
+  }
+  comics(limit: 5, offset: 5) {
+    data {
+      id
+      title
+      description
+    }
+    meta {
+      offset
+      limit
+      total
+      count
+    }
+  }
+}
+```

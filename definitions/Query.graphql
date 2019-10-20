@@ -4,4 +4,6 @@ type Query {
 extend type Query {
   characters(limit: Int, offset: Int): PaginatedCharacters
   character(id: ID!): Character
+  comics(limit: Int, offset: Int): PaginatedComics
+  comic(id: ID!): Comic
 }

@@ -1,0 +1,11 @@
+type Comic {
+  id: ID!
+  title: String!
+  digitalId: Int
+  description: String
+}
+
+type PaginatedComics {
+  data: [Comic]
+  meta: Pagination
+}
