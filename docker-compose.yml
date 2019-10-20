@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  server:
+    container_name: node
+    image: pljarlegan/apollo-server-marvel:1.0.0
+    restart: always
+    ports:
+      - 4000:4000
+    env_file: .env
+
+
+
