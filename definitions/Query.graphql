@@ -1,0 +1,7 @@
+type Query {
+  _empty: String
+}
+extend type Query {
+  characters(limit: Int, offset: Int): PaginatedCharacters
+  character(id: ID!): Character
+}
