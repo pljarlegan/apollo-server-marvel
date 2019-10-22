@@ -1,6 +1,6 @@
 {
   "name": "apollo-server-marvel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "apollo-server-marvel",
   "docker": {
     "owner": "pljarlegan"
