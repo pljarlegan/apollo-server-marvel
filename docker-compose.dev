@@ -12,7 +12,15 @@ services:
       - 4000:4000
     env_file: .env
     environment:
-      - NODE_ENV="production"
+      - NODE_ENV=production
+      - MEMCACHED=memcached
     stop_grace_period: 1s
 
 
+  memcached:
+    container_name: memcached
+    image: memcached
+    ports:
+    - 11211:11211
+    restart: always
+    stop_grace_period: 1s

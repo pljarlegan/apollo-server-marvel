@@ -2,6 +2,7 @@ const { ApolloServer, ApolloError } = require("apollo-server");
 const GraphQLHelper = require("./helpers/graphql");
 const api = require("marvel-api");
 const colors = require("colors");
+const { MemcachedCache } = require('apollo-server-cache-memcached');
 
 const server = new ApolloServer({
   typeDefs: GraphQLHelper.typeDefs,
@@ -30,6 +31,15 @@ const server = new ApolloServer({
     return {
       marvel,
     };
+  },
+  persistedQueries: {
+    cache: new MemcachedCache(
+      [ process.env.MEMCACHED ],
+      { retries: 10, retry: 10000 }, // Options
+    ),
+  },
+  cacheControl: {
+    defaultMaxAge: 300,
   }
 });
 let { PRIVATE_KEY, PUBLIC_KEY } = process.env;
