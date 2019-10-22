@@ -3,9 +3,24 @@ type Comic {
   title: String!
   digitalId: Int
   description: String
+  thumbnail: Thumbnail
+  characters: CharacterList
 }
 
 type PaginatedComics {
   data: [Comic]
   meta: Pagination
+}
+
+type CharacterList {
+  available: Int
+  returned: Int
+  collectionURI: String
+  items: [CharacterSummary]
+}
+
+type CharacterSummary {
+  resourceURI: String
+  name: String
+  role: String
 }
