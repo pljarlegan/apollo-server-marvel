@@ -32,12 +32,12 @@ const server = new ApolloServer({
       marvel,
     };
   },
-  persistedQueries: {
-    cache: new MemcachedCache(
-      [ process.env.MEMCACHED ],
-      { retries: 10, retry: 10000 }, // Options
-    ),
-  },
+  // persistedQueries: {
+  //   cache: new MemcachedCache(
+  //     [ process.env.MEMCACHED ],
+  //     { retries: 10, retry: 10000 }, // Options
+  //   ),
+  // },
   cacheControl: {
     defaultMaxAge: 300,
   }
@@ -47,6 +47,6 @@ let { PRIVATE_KEY, PUBLIC_KEY } = process.env;
 if (!(PRIVATE_KEY && PUBLIC_KEY)) {
   return console.log("Unable to start server : config is missing".bold.red);
 }
-server.listen().then(({ url }) => {
+server.listen(process.env.PORT).then(({ url }) => {
   console.log("🚀".red + " Server ready at ".bold.red + url);
 });

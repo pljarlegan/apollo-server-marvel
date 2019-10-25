@@ -9,18 +9,19 @@ services:
       - ./:/home/node/app
     command: sh -c "npm start --prefix /home/node/app"
     ports:
-      - 4000:4000
+      - 4000:4001
     env_file: .env
     environment:
+      - PORT=4001
       - NODE_ENV=production
       - MEMCACHED=memcached
     stop_grace_period: 1s
 
 
-  memcached:
-    container_name: memcached
-    image: memcached
-    ports:
-    - 11211:11211
-    restart: always
-    stop_grace_period: 1s
+#  memcached:
+#    container_name: memcached
+#    image: memcached
+#    ports:
+#    - 11211:11211
+#    restart: always
+#    stop_grace_period: 1s
