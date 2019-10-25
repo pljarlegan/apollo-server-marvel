@@ -18,7 +18,8 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js localhost 4000",
+    "start": "node index.js localhost 4000",
+    "start:dev": "nodemon index.js localhost 4000",
     "build": "node scripts/build.js"
   },
   "keywords": [],
