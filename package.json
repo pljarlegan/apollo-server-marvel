@@ -9,7 +9,7 @@
     "apollo-datasource-rest": "0.2.1",
     "apollo-server": "2.1.0",
     "apollo-server-cache-memcached": "^0.6.3",
-    "apollo-server-express": "2.9.6",
+    "apollo-server-express": "2.14.0",
     "colors": "1.4.0",
     "graphql": "14.0.2",
     "lodash": "4.17.11",
