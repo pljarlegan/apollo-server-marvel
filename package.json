@@ -25,7 +25,7 @@
   "keywords": [],
   "devDependencies": {
     "@types/graphql": "14.0.1",
-    "eslint": "6.5.1",
+    "eslint": "7.1.0",
     "nodemon": "1.18.4"
   }
 }
