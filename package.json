@@ -11,7 +11,7 @@
     "apollo-server-cache-memcached": "^0.6.3",
     "apollo-server-express": "2.14.0",
     "colors": "1.4.0",
-    "graphql": "14.0.2",
+    "graphql": "14.7.0",
     "lodash": "4.17.15",
     "marvel-api": "1.1.0"
   },
